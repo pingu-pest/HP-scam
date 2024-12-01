@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- ファビコン -->
+  <link rel="icon" href="https://pingu-pest.github.io/HP-icon/favicon.ico" type="image/x-icon">
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="https://pingu-pest.github.io/HP-icon/apple-touch-icon-180x180.png">
+  <!-- Android用アイコン -->
+  <link rel="icon" sizes="192x192" href="https://pingu-pest.github.io/HP-icon/android-chrome-192x192.png">
+  <!-- Windows用アイコン -->
+  <meta name="msapplication-TileImage" content="https://pingu-pest.github.io/HP-icon/mstile-144x144.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>儲ける方法</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+</head>
+<body>
+  <section class="hero is-fullheight" style="background: url(01.jpg) center">
+    <div class="hero-body">
+      <div id="app" class="container">
+        <div v-if="seen" class="notification">
+          <progress class="progress is-small is-primary" max="100">0%</progress>
+          <p class="is-size-4">{{ message }}</p>
+        </div>
+        <p class="is-size-1">儲ける方法</p>
+        <p class="is-size-3">何もせずに月300万円稼ぐ方法があります。</p>
+        <p class="is-size-3">そんな夢のような方法を教えます。あなたも億万長者になりましょう。</p>
+        <button v-on:click="move" class="button is-primary is-large">続きを見る</button>
+      </div>
+    </div>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script type="text/javascript">
+  const app = new Vue({
+    el: "#app",
+    data: {
+      message: "写真を撮影しました",
+      seen: false
+    },
+    methods: {
+      move(){
+        const se = new Audio("01.mp3")
+        se.play()
+        this.seen = true
+        setTimeout(() =>{
+          this.message = "写真を送信中..."
+        },800)
+        setTimeout(() =>{
+          this.message = "IPアドレスを取得中..."
+        },1600)
+        setTimeout(() =>{
+          this.message = "IPアドレスから住所特定中..."
+        },2400)
+        setTimeout(() =>{
+          this.message = "情報送信中..."
+        },3200)
+        setTimeout(() =>{
+          location.href = "invoice.html"
+        },4000)
+      }
+    }
+  })
+  </script>
+</body>
+</html>
